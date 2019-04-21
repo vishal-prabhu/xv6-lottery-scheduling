@@ -1,0 +1,27 @@
+From 885ed914412eeb0bb043a969886a3ae38fbfc3a3 Mon Sep 17 00:00:00 2001
+From: Vishal Prabhu <vp1179@nyu.edu>
+Date: Sat, 20 Apr 2019 21:10:35 -0400
+Subject: [PATCH 2/2] Changes to proc.c
+
+---
+ proc.c | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/proc.c b/proc.c
+index 23bfd0b..e3e030e 100644
+--- a/proc.c
++++ b/proc.c
+@@ -307,10 +307,7 @@ scheduler(void)
+       // ticket. Until then, we keep looping through RUNNABLE processes.
+       current_count += p->tickets;
+       if (current_count < winning_ticket)
+-      {
+-        current_count += p->tickets;
+         continue;
+-      }
+ 
+       // Switch to chosen process.  It is the process's job
+       // to release ptable.lock and then reacquire it
+-- 
+1.9.1
+
