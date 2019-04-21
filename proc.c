@@ -307,10 +307,7 @@ scheduler(void)
       // ticket. Until then, we keep looping through RUNNABLE processes.
       current_count += p->tickets;
       if (current_count < winning_ticket)
-      {
-        current_count += p->tickets;
         continue;
-      }
 
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
